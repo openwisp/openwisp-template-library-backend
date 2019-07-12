@@ -15,10 +15,31 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # openwisp admin theme
     'openwisp_utils.admin_theme',
-    'template_library',
+    # rest framework
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    # allauth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_auth.registration',
+    'openwisp_users',
+    # admin
     'django.contrib.admin',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    # template library
+    'openwisp_controller.pki',
+    'openwisp_controller.config',
+    'template_library'
 ]
+
+AUTH_USER_MODEL = 'openwisp_users.User'
+SITE_ID = '1'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -66,3 +87,10 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+# during development only
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+LOGIN_ON_EMAIL_CONFIRMATION = False
