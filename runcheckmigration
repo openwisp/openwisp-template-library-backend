@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+checkmigrations --migration-path ./template_library/migrations/ || exit 1
