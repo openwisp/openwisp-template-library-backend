@@ -17,5 +17,11 @@ urlpatterns = [
         views.confirm_email,
         name='confirm_email'),
     url(r'^accounts/',
-        include('openwisp_users.accounts.urls'))
+        include('openwisp_users.accounts.urls')),
+    url(r'^orgs/$',
+        views.list_orgs,
+        name='list_orgs'),
+    url(r'^orgs/(?P<pk>[^/]+)/$',
+        views.org_detail,
+        name='org_detail'),
 ]

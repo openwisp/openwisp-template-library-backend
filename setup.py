@@ -1,4 +1,5 @@
 import os
+import sys
 
 from setuptools import find_packages, setup
 from template_library import get_version
@@ -31,16 +32,22 @@ setup(
     url='https://github.com/openwisp/openwisp-template-library-backend',
     author='Noumbissi Valere Gille Geovan',
     author_email='noumbissivalere@gmail.com',
-    install_requires=['django-model-utils==3.2.0',
-                      'openwisp-utils==0.2.2',
-                      'openwisp_users==0.1.11a0',
-                      'openwisp_controller==0.4a0'
-                      ],
+    install_requires=[
+        'openwisp-users==0.1.10',
+        'openwisp-utils==0.2.2',
+        'openwisp-controller==0.3.2',
+        'django-rest-auth==0.9.5',
+        'autobahn==19.6.1',
+        'celery>=4.3.0',
+        'redis>=3.3.5'
+    ],
     extras_require={
-        'test': ['flake8<=3.6.0',
-                 'isort<=4.3.4',
-                 'coverage',
-                 'coveralls'],
+        'test': [
+            'flake8<=3.6.0',
+            'isort<=4.3.4',
+            'coverage',
+            'coveralls'
+        ],
     },
     classifiers=[
         'Development Status :: 3 - Alpha',

@@ -1,6 +1,8 @@
 import os
+import sys
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TESTING = sys.argv[1:2] == ['test']
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 SECRET_KEY = '$dg0km-gvg0$=&8v3m+qtz0#%uoj=iuyuexnhn0&#^^9djq3e8'
 
@@ -51,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'tests.urls'
 
 TEMPLATES = [
     {
@@ -87,6 +89,13 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+if not TESTING:
+    CELERY_BROKER_URL = 'redis://localhost/1'
+else:
+    CELERY_TASK_ALWAYS_EAGER = True
+    CELERY_TASK_EAGER_PROPAGATES = True
+    CELERY_BROKER_URL = 'memory://'
 
 # during development only
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
