@@ -33,6 +33,10 @@ setup(
     author='Noumbissi Valere Gille Geovan',
     author_email='noumbissivalere@gmail.com',
     install_requires=[
+        'django-allauth==0.39.1',
+        'djangorestframework==3.10.2',
+        'django-rest-auth==0.9.5',
+        'django-cors-headers==3.1.0',
         'openwisp-users==0.1.10',
         'openwisp-utils==0.2.2',
         'openwisp-controller==0.3.2',

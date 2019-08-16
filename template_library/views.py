@@ -2,6 +2,7 @@ from allauth.account.views import ConfirmEmailView as BaseConfirmEmailView
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from django.shortcuts import redirect
+from django.conf import settings
 from rest_auth.registration.views import SocialLoginView
 
 from openwisp_users.models import Organization, OrganizationUser
@@ -31,15 +32,12 @@ class GoogleLogin(SocialLoginView):
 class ConfirmEmailView(BaseConfirmEmailView):
     """
     Override default email confirmation view to
-    redirect users to create organizations
-    after signup
+    redirect users to login after confirming email
     """
 
     def post(self, *args, **kwargs):
         super(ConfirmEmailView, self).post(*args, **kwargs)
-        # redirect users to url with view name list_orgs
-        # which handles both creation and listing of organizations
-        return redirect('list_orgs')
+        return redirect(settings.LOGIN_URL)
 
 
 list_orgs = OrganizationListCreateAPIView.as_view()

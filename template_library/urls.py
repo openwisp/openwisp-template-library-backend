@@ -11,6 +11,7 @@ urlpatterns = [
         name='fb_login'),
     url(r'^rest-auth/',
         include('rest_auth.urls')),
+    url(r'^', include('django.contrib.auth.urls')),
     url(r'^rest-auth/registration/',
         include('rest_auth.registration.urls')),
     url(r'^accounts/confirm-email/(?P<key>[-:\w]+)/$',
