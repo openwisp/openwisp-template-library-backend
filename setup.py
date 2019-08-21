@@ -33,24 +33,27 @@ setup(
     author='Noumbissi Valere Gille Geovan',
     author_email='noumbissivalere@gmail.com',
     install_requires=[
-        'django-allauth==0.39.1',
-        'djangorestframework==3.10.2',
-        'django-rest-auth==0.9.5',
+        'celery==4.3.0',
+        'django-allauth<0.37.0,>=0.35.0',
+        'djangorestframework<3.8,>=3.3',
         'django-cors-headers==3.1.0',
-        'openwisp-users==0.1.10',
-        'openwisp-utils==0.2.2',
-        'openwisp-controller==0.3.2',
         'django-rest-auth==0.9.5',
         'autobahn==19.6.1',
-        'celery>=4.3.0',
-        'redis>=3.3.5'
+        'redis>=3.3.5',
+        'django<2.1,>=1.11',
+        'requests==2.22.0',
+        'openwisp-controller>=0.3.2',
+        'django-netjsonconfig>=0.8.1',
+        'openwisp-users>=0.1.10',
+        'openwisp-utils>=0.2.2',
     ],
     extras_require={
         'test': [
             'flake8<=3.6.0',
             'isort<=4.3.4',
             'coverage',
-            'coveralls'
+            'coveralls',
+            'mock==3.0.5',
         ],
     },
     classifiers=[
