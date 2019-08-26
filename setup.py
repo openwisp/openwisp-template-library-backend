@@ -33,7 +33,6 @@ setup(
     author='Noumbissi Valere Gille Geovan',
     author_email='noumbissivalere@gmail.com',
     install_requires=[
-        'celery==4.3.0',
         'django-allauth<0.37.0,>=0.35.0',
         'djangorestframework<3.8,>=3.3',
         'django-cors-headers==3.1.0',
