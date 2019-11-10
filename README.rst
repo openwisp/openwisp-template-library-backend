@@ -9,8 +9,8 @@ Template Library Backend
 
 Project goals
 -------------
-The main objective of this project is provide a backend in django for the library frontend.<br>
-this enables the use of modules which have already being made available in OpenWISP Controller<br>
+The main objective of this project is to provide a backend in django for the library frontend.<br>
+This enables the use of modules which have already been made available in OpenWISP Controller<br>
 and OpenWISP Users to be used for the template library.
 
 Dependencies
@@ -68,7 +68,7 @@ Run tests with:
     ./runtests.py
 
 
-settings
+Settings
 --------
 
 ``CORS_ORIGIN_WHITELIST``
