@@ -85,7 +85,7 @@ following the instructions from the `library frontend
     Google_client_secret = TxXfb0ixcuylgd2k59-6Dyce
 
 
-settings
+Settings
 --------
 If you wish to deploy this application, then the following settings
 need to be adjusted
