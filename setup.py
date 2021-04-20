@@ -37,7 +37,7 @@ setup(
         'djangorestframework<3.8,>=3.3',
         'django-cors-headers==3.1.0',
         'django-rest-auth==0.9.5',
-        'autobahn==19.6.1',
+        'autobahn==20.12.3',
         'redis>=3.3.5',
         'django<2.1,>=1.11',
         'requests==2.22.0',
